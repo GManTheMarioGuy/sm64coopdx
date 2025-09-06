@@ -4,10 +4,6 @@ sm64coopdx is online multiplayer mod for the Super Mario 64 PC port that synchro
 Feel free to report bugs and contribute, but remember, there must be **no upload of any copyrighted asset**. 
 Run `./extract_assets.py --clean && make clean` or `make distclean` to clear ROM assets, however this is unnecessary for contributing because the .gitignore file already excludes ROM assets.
 
-## How to Play
-
-The easiest way to play is by using [coopdx-patcher](https://github.com/coop-deluxe/coopdx-patcher/releases/latest/download/coopdx-patcher.zip). Simply drag and drop your ROM into the program or run `coopdx-patcher "your_rom_name.z64"`.
-
 ## How to Compile
 
 ### Windows:
@@ -27,59 +23,10 @@ Enter this command to install packages necessary to build sm64coopdx:
 pacman -S unzip make git mingw-w64-i686-gcc mingw-w64-x86_64-gcc mingw-w64-i686-glew mingw-w64-x86_64-glew mingw-w64-i686-SDL2 mingw-w64-i686-SDL mingw-w64-x86_64-SDL2 mingw-w64-x86_64-SDL python3
 ```
 
-### Linux:
-
-#### Install build dependencies
-The build system has the following package requirements:
-
-* python3 >= 3.6
-* libsdl2-dev
-* libglew-dev
-* git
-* libcurl
-* zlib
-
-#### Debian / Ubuntu - targeting 64 bits
-```
-sudo apt install build-essential git python3 libglew-dev libsdl2-dev libz-dev libcurl4-openssl-dev
-```
-#### Debian / Ubuntu - targeting 32 bits
-```
-sudo apt install build-essential git python3 libglew-dev:i386 libsdl2-dev:i386 libz-dev:i386 libcurl4-openssl-dev:i386
-```
-#### Fedora - targeting 64 bits
-```
-sudo dnf install make gcc python3 glew-devel SDL2-devel zlib-devel libcurl-devel
-```
-#### Fedora - targeting 32 bits
-```
-sudo dnf install python3.i686 glew-devel.i686 SDL2-devel.i686 zlib-devel.i686 libcurl-devel.i686
-```
-#### Arch Linux
-```
-sudo pacman -S base-devel python sdl2 glew zlib-devel libcurl-devel
-```
-
-### macOS
-#### Install dependencies.
-
-Firstly, install [Homebrew](https://brew.sh), this will be used to download the dependencies.
-
-After installing homebrew, open up the Terminal application, and run this command:
-
-##### Arm:
-```
-brew install make mingw-w64 gcc sdl2 pkg-config glew glfw3 libusb audiofile coreutils
-```
-##### Intel:
-```
-brew install make mingw-w64 gcc gcc@9 sdl2 pkg-config glew glfw3 libusb audiofile coreutils
-```
-
 ### Obtain the source code.
 You can either download the ZIP file from github, or clone it with git:
 ```
-git clone https://github.com/coop-deluxe/sm64coopdx.git
+git clone https://github.com/GManTheMarioGuy/sm64coopdx.git
 cd sm64coopdx
 ```
 
@@ -107,31 +54,10 @@ If during the build process you get messages saying that the ROM has an incorrec
 
 `WINDOW_API [SDL1|SDL2|DXGI|DUMMY]` Sets the window API.
 
-#### Windows / Linux:
+#### Windows
 ```
 make -j
 ```
-#### macOS:
-```
-gmake -j2 OSX_BUILD=1
-```
-**macOS Notes:**
-
-*`-j2` makes your computer allocate 2 cores to compiling, without this, it would be 1. `-j` with nothing is the absolute fastest, however may make your computer slow when doing other things. I would recommend `-j2` on M-Series mac's.*
-
-Once it's done compiling, you will now have a .app file. If you would like to move it to the applications folder, you can run this terminal command:
-
-```
-cp build/us_pc/sm64coopdx.app /Applications/
-```
-
-If you want to move it elsewhere, I would recommend running:
-
-```
-cp build/us_pc/sm64coopdx.app ~/Downloads/
-```
-
-Then navigate to the Downloads folder, and move `sm64coopdx.app` to where you want it to be.
 
 ## Goal (accomplished)
 Create a mod for the PC port where multiple people can play together online.
@@ -140,3 +66,6 @@ Unlike previous multiplayer projects, this one synchronizes enemies and events. 
 
 ## Lua
 sm64coopdx is moddable via Lua, similar to Roblox and Garry's Mod's Lua APIs. To get started, click [here](docs/lua/lua.md) to see the Lua documentation.
+
+## Discord
+SM64CoopDX DirectX 12 has a Discord server that you can join if you want to download the game, report bugs, etc. To join, click [here](https://discord.gg/a66XPvmrPZ).
