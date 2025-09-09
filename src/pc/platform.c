@@ -218,7 +218,7 @@ const char *sys_user_path(void)
         return NULL;
     }
 
-    LPCWSTR subdirs[] = { L"sm64coopdx", L"sm64ex-coop", L"sm64coopdx", NULL };
+    LPCWSTR subdirs[] = { L"sm64coopdx-directx12", L"sm64ex-coop", L"sm64coopdx-directx12", NULL };
 
     for (int i = 0; NULL != subdirs[i]; i++)
     {
